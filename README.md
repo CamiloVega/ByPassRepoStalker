@@ -49,6 +49,7 @@ Application uses Android Annotations as a library to reduce redundancy of code a
 - Use of persistance properties
 - xml view binding
 - save instance state 
+
 Information on this library can be found in : https://github.com/androidannotations/androidannotations
 
 Note: given that the requirement for the following counter is expected to be run over a low number of users, first the activity gets a list of all the users and uses that information to display the UserListFragment. The fact that the client sees the information right away gives the sense of speed and responsiveness. In the meantime, the activity is finishing fetching the missing information (following counter) and updating the users within the list. 
