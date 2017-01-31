@@ -42,7 +42,7 @@ ImageLoader.createImageLoader(this)
  .into(image);
 ```
 
-Solution
+### My Solution
 Application uses Android Annotations as a library to reduce redundancy of code as well convinience to:
 - Switch between threads
 - Use of Singletons
