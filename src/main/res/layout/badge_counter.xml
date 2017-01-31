@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/badge"
+    android:layout_width="@dimen/notification_counter_height"
+    android:layout_height="@dimen/notification_counter_height"
+    android:minWidth="@dimen/notification_counter_height"
+    android:paddingLeft="@dimen/tiny_padding"
+    android:paddingRight="@dimen/tiny_padding"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginBottom="@dimen/tiny_padding"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:background="@drawable/bg_notification_counter"
+    tools:text="1"
+    android:textColor="@android:color/white"
+    android:textSize="@dimen/caption_text"
+    android:elevation="@dimen/elevation_toolbar"
+    tools:ignore="UnusedAttribute"
+    android:visibility="gone"
+    tools:visibility="visible"
+    />

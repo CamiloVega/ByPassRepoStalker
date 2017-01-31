@@ -3,7 +3,10 @@ package com.bypassmobile.octo.image;
 
 import android.graphics.Bitmap;
 
+import com.bypassmobile.octo.account.Preferences;
 import com.squareup.picasso.Cache;
+
+import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

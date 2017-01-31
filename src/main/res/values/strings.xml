@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Octo-Stalker</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Repo Stalker</string>
+    <string name="follows">{name} follows</string>
+    <string name="fetching_data">Fetching Data</string>
+    <string name="fetch_organization_members">Listing {name} members</string>
+    <string name="fetch_user_stalker">Getting users that {name} stalks</string>
+    <string name="search">Search</string>
 </resources>

@@ -1,13 +1,15 @@
 package com.bypassmobile.octo;
 
 import android.app.Activity;
+
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.bypassmobile.octo.rest.GithubEndpoint;
 
 import retrofit.RestAdapter;
 
-public class BaseActivity extends Activity {
+public class BaseActivity extends AppCompatActivity {
 
     private GithubEndpoint endpoint;
 
