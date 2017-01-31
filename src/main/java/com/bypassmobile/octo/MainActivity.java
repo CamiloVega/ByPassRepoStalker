@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,6 +33,7 @@ import retrofit.client.Response;
 public class MainActivity extends BaseActivity implements UserListFragment.UserListListener {
 
     private static final String ORG_NAME = "bypasslane";
+    private static final int NOT_FOUND_ERROR = 404;
 
     MenuItem searchMenuItem;
 
@@ -119,7 +121,11 @@ public class MainActivity extends BaseActivity implements UserListFragment.UserL
 
             @Override
             public void failure(RetrofitError error) {
+
                 dismissProgressDialog();
+                if (error.getResponse() != null && error.getResponse().getStatus() == NOT_FOUND_ERROR){
+                    showErrorDialog(getString(R.string.org_error));
+                }
             }
         });
     }
@@ -132,7 +138,7 @@ public class MainActivity extends BaseActivity implements UserListFragment.UserL
      * @param user The User whose following list we want to retrieve
      */
     @Background
-    protected void getUserFollowers(final User user) {
+    protected void getUserFollowing(final User user) {
 
         showProgressDialog(Phrase.from(this, R.string.fetch_user_stalker)
                 .put("name", user.getName())
@@ -153,6 +159,9 @@ public class MainActivity extends BaseActivity implements UserListFragment.UserL
             @Override
             public void failure(RetrofitError error) {
                 dismissProgressDialog();
+                if (error.getResponse() != null && error.getResponse().getStatus() == NOT_FOUND_ERROR){
+                    showErrorDialog(getString(R.string.user_error));
+                }
             }
         });
     }
@@ -203,6 +212,15 @@ public class MainActivity extends BaseActivity implements UserListFragment.UserL
     }
 
     @UiThread
+    protected void showErrorDialog(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.error))
+                .setMessage(message)
+                .setCancelable(true)
+                .show();
+    }
+
+    @UiThread
     protected void dismissProgressDialog(){
         progress.dismiss();
     }
@@ -226,7 +244,7 @@ public class MainActivity extends BaseActivity implements UserListFragment.UserL
     @Override
     public void onUserClicked(User user) {
         searchView.setIconified(true);
-        getUserFollowers(user);
+        getUserFollowing(user);
     }
 
     @Override

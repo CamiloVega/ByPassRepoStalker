@@ -6,4 +6,8 @@
     <string name="fetch_organization_members">Listing {name} members</string>
     <string name="fetch_user_stalker">Getting users that {name} stalks</string>
     <string name="search">Search</string>
+    <string name="error">Error</string>
+    <string name="user_error">User not Found</string>
+    <string name="org_error">Organization not Found</string>
+
 </resources>
